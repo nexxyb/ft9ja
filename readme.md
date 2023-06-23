@@ -20,4 +20,4 @@ Step 4: Create an admin dashboard.
     Click the admin dashboard link on the homepage to navigate to admin dashboard
 
 
-    The step 5 will be presented on interview day.
+The step 5 will be presented on interview day.
