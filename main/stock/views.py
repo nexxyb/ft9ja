@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 from django.http import JsonResponse
 
 User= get_user_model()
-simulate_trader(100,31,10)
+simulate_trader(100,7200,10)
 
 def user_dashboard(request):
     ten_minutes_ago = datetime.now() - timedelta(minutes=10)
