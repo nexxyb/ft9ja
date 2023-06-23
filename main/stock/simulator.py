@@ -6,7 +6,7 @@ from bson import ObjectId
 
 
 def connect_to_mongodb():
-    client = MongoClient("mongodb://mongodb:27017/")
+    client = MongoClient("mongodb://localhost:27017/")
 
     db = client["stocks"]  
 
