@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth import get_user_model
-from .simulator import simulate, read_from_mongodb
+from .simulator import simulate, read_from_mongodb,flush_mongodb
 from django.utils.safestring import mark_safe
 from datetime import datetime, timedelta
 from django.http import JsonResponse
@@ -9,7 +9,8 @@ User= get_user_model()
 
 
 def user_dashboard(request):
-    simulate(100,60,10)
+    flush_mongodb()
+    simulate(100,30,10)
     ten_minutes_ago = datetime.now() - timedelta(minutes=10)
     trades_data = read_from_mongodb(user_id=1,type='read', timestamp=ten_minutes_ago, limit=10)
     prices = []

@@ -37,6 +37,10 @@ def write_to_mongodb(data):
     collection = connect_to_mongodb()
     collection.insert_one(data)
 
+def flush_mongodb():
+    collection = connect_to_mongodb()
+    collection.delete_many({})
+    print("MongoDB flushed successfully.")
 
 async def simulate_trader(user_id, initial_amount, num_minutes, data_queue):
     current_amount = initial_amount
