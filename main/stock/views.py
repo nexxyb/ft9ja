@@ -6,9 +6,10 @@ from datetime import datetime, timedelta
 from django.http import JsonResponse
 
 User= get_user_model()
-simulate(100,7200,10)
+
 
 def user_dashboard(request):
+    simulate(100,60,10)
     ten_minutes_ago = datetime.now() - timedelta(minutes=10)
     trades_data = read_from_mongodb(user_id=1,type='read', timestamp=ten_minutes_ago, limit=10)
     prices = []
