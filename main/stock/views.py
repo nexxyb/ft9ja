@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from django.contrib.auth import get_user_model
-from .simulator import simulate_trader, read_from_mongodb
+from .simulator import simulate, read_from_mongodb
 from django.utils.safestring import mark_safe
 from datetime import datetime, timedelta
 from django.http import JsonResponse
 
 User= get_user_model()
-simulate_trader(100,7200,10)
+simulate(100,200,10)
 
 def user_dashboard(request):
     ten_minutes_ago = datetime.now() - timedelta(minutes=10)
